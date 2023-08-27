@@ -1,0 +1,26 @@
+data:
+  links:
+  - from: openapi_client_0
+    to: log_message_0
+    type: default
+  name: timer_0
+  tasks:
+  - activity:
+      input:
+        method: GET
+        path: /
+        queryParams:
+          seed: foobar
+      ref: openapi_client
+      settings:
+        connection: openapi_client.restClient1
+    id: openapi_client_0
+    name: openapi_client_0
+  - activity:
+      input:
+        message: '=string.concat("status: ", $activity[openapi_client_0].status, "
+          results[0]: ", $activity[openapi_client_0].data.results[0].email)'
+      ref: log_message
+    id: log_message_0
+    name: log_message_0
+id: flow.timer.5183a406-1810-489c-a90a-71965e306abb-timer_0

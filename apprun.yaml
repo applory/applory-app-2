@@ -1,0 +1,27 @@
+connections:
+- id: db_action.dbServer1
+createdAt: "2023-08-27 16:57:55"
+description: This is an example application for demo purpose
+environ:
+  include: ./system/apprun-environ.yaml
+longName: Test App to add API server and MySQL function
+name: 1-apiserver
+productGroup: demo product
+resources:
+- include: system/default-api-flow.yaml
+- include: flow
+triggers:
+- id: openapi_listener.apiServer1
+- handlers:
+  - actions:
+    - ref: '#flow'
+      settings:
+        flowURI: res://flow.timer.5183a406-1810-489c-a90a-71965e306abb-timer_0
+    settings:
+      repeatInterval: 10m
+      startDelay: 30s
+  id: timer.5183a406-1810-489c-a90a-71965e306abb-timer_0
+  ref: timer
+type: app
+updatedAt: "2023-08-27 18:45:14"
+version: 1.0.0

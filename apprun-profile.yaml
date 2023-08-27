@@ -1,0 +1,35 @@
+db_action:
+- charset: utf8mb4
+  dbType: mysql
+  dbname: demo
+  disablePrepared: false
+  host: 192.168.86.58
+  labeledResults: false
+  maxIdleConnections: 5
+  password: root
+  port: 3306
+  profileName: dbServer1
+  sqlPath: ./sql
+  threads: 100
+  username: root
+openapi_client:
+- baseUri: https://randomuser.me/api
+  profileName: restClient1
+  skipSSLVerify: false
+  timeout: 10
+  useSystemCert: true
+openapi_listener:
+- apiShortName: userApi
+  apiURLPrefix: /api/v1
+  defaultFlowURI: res://flow.openapi-listener.DefaultAPIFlow
+  disableCors: false
+  enableTLS: false
+  host: 0.0.0.0
+  mockResponse: false
+  nodePath: ./api
+  port: 9998
+  profileName: apiServer1
+  spec: ./api/user-openapi.yaml
+  validateRequest: false
+  validateServer: false
+  watch: false

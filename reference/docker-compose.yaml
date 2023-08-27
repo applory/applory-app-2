@@ -1,0 +1,35 @@
+# To execute the below docker images, need to execute the below steps: 
+# run `yarn build-image` at the applory-docs directory
+# run `yarn build-image` at the workshop directory
+
+version: '3'
+
+networks:
+  primenet:
+    name: applory
+
+volumes:
+  db_data:
+
+services:
+  mysql8:
+    build:
+      context: ./mysql8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
+      TZ: Asia/Shanghai
+    restart: always
+    container_name: applory-mysql8
+    image: applory-mysql8:1.0
+    volumes:
+      - ./mysql8/data:/var/lib/mysql
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+      --max_allowed_packet=128M
+      --default-authentication-plugin=caching_sha2_password
+    ports:
+      - 3306:3306
