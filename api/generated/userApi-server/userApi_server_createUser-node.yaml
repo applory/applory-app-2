@@ -7,7 +7,7 @@ icon: apiserver.svg
 inputs:
 - description: The connection name defined in the profile.yaml file
   label: Connection settings
-  name: connection
+  name: settings.connection
   optional: true
   type: string
 label: Create New User

@@ -7,7 +7,7 @@ icon: apiserver.svg
 inputs:
 - description: The connection name defined in the profile.yaml file
   label: Connection settings
-  name: connection
+  name: settings.connection
   optional: true
   type: string
 label: Delete user
@@ -34,8 +34,8 @@ outputs:
 replys:
 - baseClasses:
   - application/json; charset=utf-8
-  - ErrorResponse
-  label: 'HTTP: default, ErrorResponse'
+  - Confirmation
+  label: 'HTTP: 200, Confirmation'
   name: Results
   params:
   - label: status
@@ -57,8 +57,8 @@ replys:
   type: ""
 - baseClasses:
   - application/json; charset=utf-8
-  - Confirmation
-  label: 'HTTP: 200, Confirmation'
+  - ErrorResponse
+  label: 'HTTP: default, ErrorResponse'
   name: Results
   params:
   - label: status

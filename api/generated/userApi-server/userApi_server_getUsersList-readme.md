@@ -22,7 +22,7 @@ The connection settings can be specified via the profile name defined in the App
 
 | Name | Type | Optional | Description |
 |:--- | :--- | :--- | :--- |
-| connection | string | true | The connection name defined in the profile.yaml file |
+| settings.connection | string | true | The connection name defined in the profile.yaml file |
 
 ### Outputs
 

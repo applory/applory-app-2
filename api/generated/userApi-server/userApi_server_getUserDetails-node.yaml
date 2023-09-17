@@ -7,7 +7,7 @@ icon: apiserver.svg
 inputs:
 - description: The connection name defined in the profile.yaml file
   label: Connection settings
-  name: connection
+  name: settings.connection
   optional: true
   type: string
 label: Get user details
@@ -32,29 +32,6 @@ outputs:
     type: string
   type: ""
 replys:
-- baseClasses:
-  - application/json; charset=utf-8
-  - ErrorResponse
-  label: 'HTTP: default, ErrorResponse'
-  name: Results
-  params:
-  - label: status
-    name: status
-    optional: true
-    type: number
-  - label: data
-    name: data
-    optional: true
-    type: application/json
-  - label: headers
-    name: headers
-    optional: true
-    type: application/json
-  - label: cookies
-    name: cookies
-    optional: true
-    type: application/json
-  type: ""
 - baseClasses:
   - application/json; charset=utf-8
   - User
@@ -82,6 +59,29 @@ replys:
   - application/json; charset=utf-8
   - ErrorResponse
   label: 'HTTP: 400, ErrorResponse'
+  name: Results
+  params:
+  - label: status
+    name: status
+    optional: true
+    type: number
+  - label: data
+    name: data
+    optional: true
+    type: application/json
+  - label: headers
+    name: headers
+    optional: true
+    type: application/json
+  - label: cookies
+    name: cookies
+    optional: true
+    type: application/json
+  type: ""
+- baseClasses:
+  - application/json; charset=utf-8
+  - ErrorResponse
+  label: 'HTTP: default, ErrorResponse'
   name: Results
   params:
   - label: status

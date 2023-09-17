@@ -22,7 +22,7 @@ The connection settings can be specified via the profile name defined in the App
 
 | Name | Type | Optional | Description |
 |:--- | :--- | :--- | :--- |
-| connection | string | true | The connection name defined in the profile.yaml file |
+| settings.connection | string | true | The connection name defined in the profile.yaml file |
 
 ### Outputs
 
@@ -35,15 +35,6 @@ The connection settings can be specified via the profile name defined in the App
 
 The below defines the reponses to be sent back to client when the flow finish its processing.
 
-Output: HTTP: default, ErrorResponse
-
-| Name | Type | Optional | Description |
-|:--- | :--- | :--- | :--- |
-| status | number | true |  |
-| data | application/json | true |  |
-| headers | application/json | true |  |
-| cookies | application/json | true |  |
-
 Output: HTTP: 200, User
 
 | Name | Type | Optional | Description |
@@ -54,6 +45,15 @@ Output: HTTP: 200, User
 | cookies | application/json | true |  |
 
 Output: HTTP: 400, ErrorResponse
+
+| Name | Type | Optional | Description |
+|:--- | :--- | :--- | :--- |
+| status | number | true |  |
+| data | application/json | true |  |
+| headers | application/json | true |  |
+| cookies | application/json | true |  |
+
+Output: HTTP: default, ErrorResponse
 
 | Name | Type | Optional | Description |
 |:--- | :--- | :--- | :--- |

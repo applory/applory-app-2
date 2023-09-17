@@ -16,7 +16,7 @@ data:
             firstName: =$.content.firstName
             id: =$.content.id
             lastName: =$.content.lastName
-            password: =$.content.password
+            password: =crypto.hashPassword($.content.password)
             username: =$.content.username
         sqlId: userdb.users_test.insertUsersTest
       ref: db_action
