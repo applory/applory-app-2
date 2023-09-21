@@ -18,8 +18,8 @@ data:
     name: openapi_client_0
   - activity:
       input:
-        message: '=string.concat("status: ", $activity[openapi_client_0].status, "
-          results[0]: ", $activity[openapi_client_0].data.results[0].email)'
+        message: '=string.concat("status: ", $node[openapi_client_0].status, " results[0]:
+          ", $node[openapi_client_0].data.results[0].email)'
       ref: log_message
     id: log_message_0
     name: log_message_0

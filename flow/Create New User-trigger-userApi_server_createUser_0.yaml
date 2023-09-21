@@ -32,8 +32,7 @@ data:
     id: log_message_0
     name: log_message_0
   - activity:
-      ref: action_reply
-      settings:
+      input:
         code: 200
         data:
           mapping:
@@ -42,6 +41,7 @@ data:
         headers:
           mapping:
             x-transaction-id: =$.headers["X-Transaction-Id"]
+      ref: action_reply
     id: action_reply_0
     name: action_reply_0
 id: flow.userApi_server_createUser
